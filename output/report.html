@@ -1,0 +1,755 @@
+
+    <!DOCTYPE html>
+    <html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <title>Report Deduplicazione Immagini</title>
+
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 40px;
+                background-color: #f4f4f4;
+                color: #222;
+            }
+
+            h1 {
+                color: #333;
+                margin-bottom: 30px;
+            }
+
+            h2 {
+                margin-top: 0;
+            }
+
+            h3 {
+                margin-top: 25px;
+            }
+
+            .group {
+                background-color: white;
+                padding: 20px;
+                margin-bottom: 30px;
+                border-radius: 8px;
+            }
+
+            table {
+                border-collapse: collapse;
+                width: 100%;
+                margin-top: 15px;
+            }
+
+            th, td {
+                padding: 10px;
+                border: 1px solid #ddd;
+                text-align: left;
+            }
+
+            th {
+                background-color: #eeeeee;
+            }
+
+            .relations {
+                margin-top: 20px;
+                padding: 15px;
+                background-color: #f8f8f8;
+                border-left: 5px solid #607d8b;
+            }
+
+            .recommended {
+                margin-top: 20px;
+                padding: 15px;
+                background-color: #e8f5e9;
+                border-left: 5px solid #2e7d32;
+            }
+
+            .exact {
+                color: #1565c0;
+                font-weight: bold;
+            }
+
+            .near {
+                color: #ef6c00;
+                font-weight: bold;
+            }
+
+            ul {
+                margin-top: 10px;
+            }
+
+            li {
+                margin-bottom: 8px;
+            }
+        </style>
+    </head>
+
+    <body>
+
+    <h1>Report Deduplicazione Immagini</h1>
+    
+        <div class="group">
+
+        <h2>Gruppo 1</h2>
+
+        <table>
+
+        <tr>
+            <th>File</th>
+            <th>Risoluzione</th>
+            <th>Pixel</th>
+            <th>Formato</th>
+            <th>Dimensione</th>
+            <th>EXIF</th>
+        </tr>
+        
+            <tr>
+                <td>A_blur_lieve.jpg</td>
+
+                <td>
+                    2048 x 1536
+                </td>
+
+                <td>
+                    3145728
+                </td>
+
+                <td>
+                    JPEG
+                </td>
+
+                <td>
+                    183.41 KB
+                </td>
+
+                <td>
+                    No
+                </td>
+            </tr>
+            
+            <tr>
+                <td>A_compressa_q35.jpg</td>
+
+                <td>
+                    2048 x 1536
+                </td>
+
+                <td>
+                    3145728
+                </td>
+
+                <td>
+                    JPEG
+                </td>
+
+                <td>
+                    73.64 KB
+                </td>
+
+                <td>
+                    No
+                </td>
+            </tr>
+            
+            <tr>
+                <td>A_contrasto.jpg</td>
+
+                <td>
+                    2048 x 1536
+                </td>
+
+                <td>
+                    3145728
+                </td>
+
+                <td>
+                    JPEG
+                </td>
+
+                <td>
+                    227.41 KB
+                </td>
+
+                <td>
+                    No
+                </td>
+            </tr>
+            
+            <tr>
+                <td>A_convertita.png</td>
+
+                <td>
+                    2048 x 1536
+                </td>
+
+                <td>
+                    3145728
+                </td>
+
+                <td>
+                    PNG
+                </td>
+
+                <td>
+                    710.89 KB
+                </td>
+
+                <td>
+                    No
+                </td>
+            </tr>
+            
+            <tr>
+                <td>A_copia_esatta.jpg</td>
+
+                <td>
+                    2048 x 1536
+                </td>
+
+                <td>
+                    3145728
+                </td>
+
+                <td>
+                    JPEG
+                </td>
+
+                <td>
+                    208.73 KB
+                </td>
+
+                <td>
+                    No
+                </td>
+            </tr>
+            
+            <tr>
+                <td>A_originale.jpg</td>
+
+                <td>
+                    2048 x 1536
+                </td>
+
+                <td>
+                    3145728
+                </td>
+
+                <td>
+                    JPEG
+                </td>
+
+                <td>
+                    208.73 KB
+                </td>
+
+                <td>
+                    No
+                </td>
+            </tr>
+            
+            <tr>
+                <td>A_piu_luminosa.jpg</td>
+
+                <td>
+                    2048 x 1536
+                </td>
+
+                <td>
+                    3145728
+                </td>
+
+                <td>
+                    JPEG
+                </td>
+
+                <td>
+                    208.11 KB
+                </td>
+
+                <td>
+                    No
+                </td>
+            </tr>
+            
+            <tr>
+                <td>A_ridimensionata.jpg</td>
+
+                <td>
+                    800 x 600
+                </td>
+
+                <td>
+                    480000
+                </td>
+
+                <td>
+                    JPEG
+                </td>
+
+                <td>
+                    58.52 KB
+                </td>
+
+                <td>
+                    No
+                </td>
+            </tr>
+            
+        </table>
+
+        <div class="relations">
+        <h3>Relazioni rilevate</h3>
+        <ul>
+        
+                        <li>
+                            <strong>A_blur_lieve.jpg</strong>
+                            ↔
+                            <strong>A_compressa_q35.jpg</strong>
+
+                            <span class="near">
+                                — Quasi-duplicato
+                                (distanza pHash: 2)
+                            </span>
+                        </li>
+                        
+                        <li>
+                            <strong>A_blur_lieve.jpg</strong>
+                            ↔
+                            <strong>A_contrasto.jpg</strong>
+
+                            <span class="near">
+                                — Quasi-duplicato
+                                (distanza pHash: 0)
+                            </span>
+                        </li>
+                        
+                        <li>
+                            <strong>A_blur_lieve.jpg</strong>
+                            ↔
+                            <strong>A_convertita.png</strong>
+
+                            <span class="near">
+                                — Quasi-duplicato
+                                (distanza pHash: 2)
+                            </span>
+                        </li>
+                        
+                        <li>
+                            <strong>A_blur_lieve.jpg</strong>
+                            ↔
+                            <strong>A_copia_esatta.jpg</strong>
+
+                            <span class="near">
+                                — Quasi-duplicato
+                                (distanza pHash: 2)
+                            </span>
+                        </li>
+                        
+                        <li>
+                            <strong>A_blur_lieve.jpg</strong>
+                            ↔
+                            <strong>A_originale.jpg</strong>
+
+                            <span class="near">
+                                — Quasi-duplicato
+                                (distanza pHash: 2)
+                            </span>
+                        </li>
+                        
+                        <li>
+                            <strong>A_blur_lieve.jpg</strong>
+                            ↔
+                            <strong>A_ridimensionata.jpg</strong>
+
+                            <span class="near">
+                                — Quasi-duplicato
+                                (distanza pHash: 2)
+                            </span>
+                        </li>
+                        
+                        <li>
+                            <strong>A_compressa_q35.jpg</strong>
+                            ↔
+                            <strong>A_contrasto.jpg</strong>
+
+                            <span class="near">
+                                — Quasi-duplicato
+                                (distanza pHash: 2)
+                            </span>
+                        </li>
+                        
+                        <li>
+                            <strong>A_compressa_q35.jpg</strong>
+                            ↔
+                            <strong>A_convertita.png</strong>
+
+                            <span class="near">
+                                — Quasi-duplicato
+                                (distanza pHash: 0)
+                            </span>
+                        </li>
+                        
+                        <li>
+                            <strong>A_compressa_q35.jpg</strong>
+                            ↔
+                            <strong>A_copia_esatta.jpg</strong>
+
+                            <span class="near">
+                                — Quasi-duplicato
+                                (distanza pHash: 0)
+                            </span>
+                        </li>
+                        
+                        <li>
+                            <strong>A_compressa_q35.jpg</strong>
+                            ↔
+                            <strong>A_originale.jpg</strong>
+
+                            <span class="near">
+                                — Quasi-duplicato
+                                (distanza pHash: 0)
+                            </span>
+                        </li>
+                        
+                        <li>
+                            <strong>A_compressa_q35.jpg</strong>
+                            ↔
+                            <strong>A_piu_luminosa.jpg</strong>
+
+                            <span class="near">
+                                — Quasi-duplicato
+                                (distanza pHash: 4)
+                            </span>
+                        </li>
+                        
+                        <li>
+                            <strong>A_compressa_q35.jpg</strong>
+                            ↔
+                            <strong>A_ridimensionata.jpg</strong>
+
+                            <span class="near">
+                                — Quasi-duplicato
+                                (distanza pHash: 0)
+                            </span>
+                        </li>
+                        
+                        <li>
+                            <strong>A_contrasto.jpg</strong>
+                            ↔
+                            <strong>A_convertita.png</strong>
+
+                            <span class="near">
+                                — Quasi-duplicato
+                                (distanza pHash: 2)
+                            </span>
+                        </li>
+                        
+                        <li>
+                            <strong>A_contrasto.jpg</strong>
+                            ↔
+                            <strong>A_copia_esatta.jpg</strong>
+
+                            <span class="near">
+                                — Quasi-duplicato
+                                (distanza pHash: 2)
+                            </span>
+                        </li>
+                        
+                        <li>
+                            <strong>A_contrasto.jpg</strong>
+                            ↔
+                            <strong>A_originale.jpg</strong>
+
+                            <span class="near">
+                                — Quasi-duplicato
+                                (distanza pHash: 2)
+                            </span>
+                        </li>
+                        
+                        <li>
+                            <strong>A_contrasto.jpg</strong>
+                            ↔
+                            <strong>A_ridimensionata.jpg</strong>
+
+                            <span class="near">
+                                — Quasi-duplicato
+                                (distanza pHash: 2)
+                            </span>
+                        </li>
+                        
+                        <li>
+                            <strong>A_convertita.png</strong>
+                            ↔
+                            <strong>A_copia_esatta.jpg</strong>
+
+                            <span class="near">
+                                — Quasi-duplicato
+                                (distanza pHash: 0)
+                            </span>
+                        </li>
+                        
+                        <li>
+                            <strong>A_convertita.png</strong>
+                            ↔
+                            <strong>A_originale.jpg</strong>
+
+                            <span class="near">
+                                — Quasi-duplicato
+                                (distanza pHash: 0)
+                            </span>
+                        </li>
+                        
+                        <li>
+                            <strong>A_convertita.png</strong>
+                            ↔
+                            <strong>A_piu_luminosa.jpg</strong>
+
+                            <span class="near">
+                                — Quasi-duplicato
+                                (distanza pHash: 4)
+                            </span>
+                        </li>
+                        
+                        <li>
+                            <strong>A_convertita.png</strong>
+                            ↔
+                            <strong>A_ridimensionata.jpg</strong>
+
+                            <span class="near">
+                                — Quasi-duplicato
+                                (distanza pHash: 0)
+                            </span>
+                        </li>
+                        
+                    <li>
+                        <strong>A_copia_esatta.jpg</strong>
+                        ↔
+                        <strong>A_originale.jpg</strong>
+
+                        <span class="exact">
+                            — Duplicato esatto
+                        </span>
+                    </li>
+                    
+                        <li>
+                            <strong>A_copia_esatta.jpg</strong>
+                            ↔
+                            <strong>A_piu_luminosa.jpg</strong>
+
+                            <span class="near">
+                                — Quasi-duplicato
+                                (distanza pHash: 4)
+                            </span>
+                        </li>
+                        
+                        <li>
+                            <strong>A_copia_esatta.jpg</strong>
+                            ↔
+                            <strong>A_ridimensionata.jpg</strong>
+
+                            <span class="near">
+                                — Quasi-duplicato
+                                (distanza pHash: 0)
+                            </span>
+                        </li>
+                        
+                        <li>
+                            <strong>A_originale.jpg</strong>
+                            ↔
+                            <strong>A_piu_luminosa.jpg</strong>
+
+                            <span class="near">
+                                — Quasi-duplicato
+                                (distanza pHash: 4)
+                            </span>
+                        </li>
+                        
+                        <li>
+                            <strong>A_originale.jpg</strong>
+                            ↔
+                            <strong>A_ridimensionata.jpg</strong>
+
+                            <span class="near">
+                                — Quasi-duplicato
+                                (distanza pHash: 0)
+                            </span>
+                        </li>
+                        
+                        <li>
+                            <strong>A_piu_luminosa.jpg</strong>
+                            ↔
+                            <strong>A_ridimensionata.jpg</strong>
+
+                            <span class="near">
+                                — Quasi-duplicato
+                                (distanza pHash: 4)
+                            </span>
+                        </li>
+                        
+        </ul>
+        </div>
+        
+        <div class="recommended">
+
+            <strong>Immagine consigliata:</strong>
+            A_contrasto.jpg
+
+            <br><br>
+
+            <strong>Motivazione:</strong>
+
+            <ul>
+                <li>
+                    Risoluzione:
+                    2048 x 1536
+                </li>
+
+                <li>
+                    Pixel totali:
+                    3145728
+                </li>
+
+                <li>
+                    Formato:
+                    JPEG
+                </li>
+
+                <li>
+                    Dimensione file:
+                    227.41 KB
+                </li>
+
+                <li>
+                    Metadati EXIF:
+                    assenti
+                </li>
+            </ul>
+
+        </div>
+
+        </div>
+        
+        <div class="group">
+
+        <h2>Gruppo 2</h2>
+
+        <table>
+
+        <tr>
+            <th>File</th>
+            <th>Risoluzione</th>
+            <th>Pixel</th>
+            <th>Formato</th>
+            <th>Dimensione</th>
+            <th>EXIF</th>
+        </tr>
+        
+            <tr>
+                <td>B_geometrica - Copia.jpg</td>
+
+                <td>
+                    1200 x 800
+                </td>
+
+                <td>
+                    960000
+                </td>
+
+                <td>
+                    JPEG
+                </td>
+
+                <td>
+                    34.39 KB
+                </td>
+
+                <td>
+                    No
+                </td>
+            </tr>
+            
+            <tr>
+                <td>B_geometrica.jpg</td>
+
+                <td>
+                    1200 x 800
+                </td>
+
+                <td>
+                    960000
+                </td>
+
+                <td>
+                    JPEG
+                </td>
+
+                <td>
+                    34.39 KB
+                </td>
+
+                <td>
+                    No
+                </td>
+            </tr>
+            
+        </table>
+
+        <div class="relations">
+        <h3>Relazioni rilevate</h3>
+        <ul>
+        
+                    <li>
+                        <strong>B_geometrica - Copia.jpg</strong>
+                        ↔
+                        <strong>B_geometrica.jpg</strong>
+
+                        <span class="exact">
+                            — Duplicato esatto
+                        </span>
+                    </li>
+                    
+        </ul>
+        </div>
+        
+        <div class="recommended">
+
+            <strong>Immagine consigliata:</strong>
+            B_geometrica - Copia.jpg
+
+            <br><br>
+
+            <strong>Motivazione:</strong>
+
+            <ul>
+                <li>
+                    Risoluzione:
+                    1200 x 800
+                </li>
+
+                <li>
+                    Pixel totali:
+                    960000
+                </li>
+
+                <li>
+                    Formato:
+                    JPEG
+                </li>
+
+                <li>
+                    Dimensione file:
+                    34.39 KB
+                </li>
+
+                <li>
+                    Metadati EXIF:
+                    assenti
+                </li>
+            </ul>
+
+        </div>
+
+        </div>
+        
+    </body>
+    </html>
+    
